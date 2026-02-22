@@ -31,7 +31,7 @@ interface LinkItem {
 const links: LinkItem[] = [
   { icon: <GithubIcon />, label: "GitHub", href: "https://github.com/mateo-ux" },
   { icon: <LinkedinIcon />, label: "LinkedIn", href: "https://www.linkedin.com/in/mateo-alejandro-salgado-salgado" },
-  { icon: <InstagramIcon />, label: "Instagram", href: "https://www.instagram.com/TU_USUARIO" },
+  { icon: <InstagramIcon />, label: "Instagram", href: "https://www.instagram.com/mateoalejandrosalgado/" },
 ];
 
 export default function Contact() {
