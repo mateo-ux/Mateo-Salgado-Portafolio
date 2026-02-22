@@ -45,7 +45,29 @@ export default function Navbar() {
                 }
                 .navbar.scrolled { padding-top: 0.8rem; padding-bottom: 0.8rem; }
                 .nav-links { display: flex; gap: 2.5rem; list-style: none; margin: 0; padding: 0; }
+                .nav-right { display: flex; align-items: center; gap: 2rem; }
 
+                /* CV button in navbar */
+                .nav-cv-btn {
+                    display: inline-flex; align-items: center; gap: 0.4rem;
+                    font-family: var(--font-syne); font-size: 0.72rem;
+                    font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+                    color: var(--accent); text-decoration: none;
+                    border: 1px solid rgba(0,229,192,0.35);
+                    border-radius: 4px; padding: 0.45rem 0.9rem;
+                    background: rgba(0,229,192,0.06);
+                    transition: all 0.25s;
+                    white-space: nowrap;
+                }
+                .nav-cv-btn:hover {
+                    background: rgba(0,229,192,0.14);
+                    border-color: var(--accent);
+                    transform: translateY(-1px);
+                    box-shadow: 0 4px 16px rgba(0,229,192,0.15);
+                }
+                .nav-cv-btn svg { flex-shrink: 0; }
+
+                /* Hamburger */
                 .hamburger {
                     display: none; flex-direction: column; gap: 5px;
                     cursor: pointer; background: none; border: none; padding: 4px; z-index: 202;
@@ -58,7 +80,7 @@ export default function Navbar() {
                 .hamburger.open span:nth-child(2) { opacity: 0; }
                 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-                /* Dim overlay */
+                /* Overlay */
                 .mobile-overlay {
                     position: fixed; inset: 0; z-index: 198;
                     background: rgba(0,0,0,0.6);
@@ -66,9 +88,7 @@ export default function Navbar() {
                     opacity: 0; pointer-events: none;
                     transition: opacity 0.3s ease;
                 }
-                .mobile-overlay.open {
-                    opacity: 1; pointer-events: all;
-                }
+                .mobile-overlay.open { opacity: 1; pointer-events: all; }
 
                 /* Sidebar */
                 .mobile-sidebar {
@@ -79,8 +99,7 @@ export default function Navbar() {
                     padding: 6rem 2.5rem 3rem 2rem;
                     display: flex; flex-direction: column;
                     gap: 0.3rem;
-                    min-width: 200px;
-                    width: max-content;
+                    min-width: 200px; width: max-content;
                     transform: translateX(100%);
                     transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
                     box-shadow: -8px 0 40px rgba(0,0,0,0.5);
@@ -94,8 +113,7 @@ export default function Navbar() {
                     padding: 0.7rem 1rem;
                     border-radius: 4px;
                     border-left: 2px solid transparent;
-                    transition: all 0.2s;
-                    white-space: nowrap;
+                    transition: all 0.2s; white-space: nowrap;
                 }
                 .mobile-sidebar a:hover {
                     color: var(--accent);
@@ -103,10 +121,23 @@ export default function Navbar() {
                     background: rgba(0,229,192,0.06);
                     padding-left: 1.4rem;
                 }
+                /* CV link inside sidebar */
+                .mobile-sidebar .sidebar-cv {
+                    margin-top: 1.2rem;
+                    padding-top: 1.2rem;
+                    border-top: 1px solid var(--border);
+                    color: var(--accent) !important;
+                    border-left-color: transparent;
+                }
+                .mobile-sidebar .sidebar-cv:hover {
+                    border-left-color: var(--accent);
+                    background: rgba(0,229,192,0.06);
+                }
 
                 @media (max-width: 768px) {
                     .navbar { padding: 1rem 1.5rem; }
                     .nav-links { display: none; }
+                    .nav-cv-btn { display: none; }
                     .hamburger { display: flex; }
                 }
             `}</style>
@@ -119,40 +150,64 @@ export default function Navbar() {
                     MS<span style={{ color: "var(--accent)" }}>.</span>
                 </Link>
 
-                <ul className="nav-links">
-                    {navLinks.map(([label, href]) => (
-                        <li key={href}>
-                            <a href={href} style={{
-                                fontFamily: "var(--font-syne)", fontSize: "0.75rem",
-                                color: "var(--muted)", textDecoration: "none",
-                                letterSpacing: "0.1em", textTransform: "uppercase",
-                                transition: "color 0.2s"
-                            }}
-                                onMouseEnter={e => (e.currentTarget.style.color = "var(--accent)")}
-                                onMouseLeave={e => (e.currentTarget.style.color = "var(--muted)")}
-                            >
-                                {label}
-                            </a>
-                        </li>
-                    ))}
-                </ul>
+                <div className="nav-right">
+                    <ul className="nav-links">
+                        {navLinks.map(([label, href]) => (
+                            <li key={href}>
+                                <a href={href} style={{
+                                    fontFamily: "var(--font-syne)", fontSize: "0.75rem",
+                                    color: "var(--muted)", textDecoration: "none",
+                                    letterSpacing: "0.1em", textTransform: "uppercase",
+                                    transition: "color 0.2s"
+                                }}
+                                    onMouseEnter={e => (e.currentTarget.style.color = "var(--accent)")}
+                                    onMouseLeave={e => (e.currentTarget.style.color = "var(--muted)")}
+                                >
+                                    {label}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+
+                    {/* CV download button — desktop only */}
+                    <a
+                        href="/CV_Mateo_Salgado.pdf"
+                        download
+                        className="nav-cv-btn"
+                    >
+                        <svg width={13} height={13} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                            <polyline points="7 10 12 15 17 10" />
+                            <line x1="12" y1="15" x2="12" y2="3" />
+                        </svg>
+                        CV
+                    </a>
+                </div>
 
                 <button
                     className={`hamburger${open ? " open" : ""}`}
                     onClick={() => setOpen(!open)}
                     aria-label="Toggle menu"
                 >
-                    <span />
-                    <span />
-                    <span />
+                    <span /><span /><span />
                 </button>
             </nav>
 
             <div className={`mobile-overlay${open ? " open" : ""}`} onClick={() => setOpen(false)} />
+
             <div className={`mobile-sidebar${open ? " open" : ""}`}>
                 {navLinks.map(([label, href]) => (
                     <a key={href} href={href} onClick={() => setOpen(false)}>{label}</a>
                 ))}
+                {/* CV inside sidebar for mobile */}
+                <a
+                    href="/CV_Mateo_Salgado.pdf"
+                    download
+                    className="sidebar-cv"
+                    onClick={() => setOpen(false)}
+                >
+                    ↓ Descargar CV
+                </a>
             </div>
         </>
     );
