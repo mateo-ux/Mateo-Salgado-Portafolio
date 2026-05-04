@@ -9,7 +9,7 @@ const experience = [
         desc: "Desarrollo de herramientas internas con Python y Next.js (API), administración de Moodle y SIGA, automatizaciones con Google Apps Script y generación de reportes dinámicos en Google Sheets conectados con plataformas académicas. (Talento Tech)",
     },
     {
-        date: "2025 — Presente",
+        date: "Nov 2025 — Abr 2026",
         title: "Desarrollador Full Stack",
         company: "IA Conexiones · Colombia",
         desc: "Desarrollo de páginas web con backend, apps móvil ERP con Flutter y Firebase, e integración de bases de datos SQL con frontends en Next.js para clientes de distintos sectores.",
