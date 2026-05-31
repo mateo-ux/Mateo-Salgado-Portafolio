@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Cambios del portafolio — Instrucciones
 
-## Getting Started
+## Archivos a reemplazar
 
-First, run the development server:
+Copia cada archivo a la carpeta correspondiente de tu proyecto:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+| Archivo aquí             | Reemplaza en tu proyecto              |
+|--------------------------|---------------------------------------|
+| components/Proyects.tsx  | components/Proyects.tsx               |
+| components/About.tsx     | components/About.tsx                  |
+| components/Experience.tsx| components/Experience.tsx             |
+| components/Contact.tsx   | components/Contact.tsx                |
+| app/layout.tsx           | app/layout.tsx                        |
+| app/page.tsx             | app/page.tsx                          |
+
+---
+
+## Foto de perfil
+
+Renombra tu nueva foto a `foto.jpg` y colócala en la carpeta `public/` del proyecto:
+
+```
+public/foto.jpg   ← reemplaza la foto actual
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Cambios realizados
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### components/Proyects.tsx
+- Agregados 2 proyectos nuevos: **Canción de la India** (ERP agrícola, cliente real) y **Nevados Cerveza** (ERP propio, en desarrollo)
+- Descripciones de todos los proyectos reescritas con enfoque de impacto
+- Badges de "Cliente real" y "Proyecto propio" para diferenciar
+- Los proyectos nuevos aparecen primero en la lista
 
-## Learn More
+### components/About.tsx
+- Agregados 3 stats: proyectos en producción, años de experiencia
+- Texto ajustado para sonar más profesional
 
-To learn more about Next.js, take a look at the following resources:
+### components/Experience.tsx
+- Experiencia en IA Conexiones puesta primera (más reciente)
+- Descripciones ampliadas con logros concretos (2.200 registros migrados, etc.)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### components/Contact.tsx
+- CTA principal ahora es un botón grande de WhatsApp muy visible
+- Email y teléfono son links clicables
+- Footer actualizado a 2026
+- Footer ahora dice "Disponible para trabajo remoto"
+- Separador visual entre redes y datos de contacto
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### app/layout.tsx
+- Metadata de Open Graph agregada (mejora SEO y cómo se ve el link al compartir)
+- Descripción mejorada con más keywords relevantes
 
-## Deploy on Vercel
+### app/page.tsx
+- Sin cambios funcionales (el import de Proyects sigue igual para no romper nada)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Proyecto Nevados Cerveza — arreglar metadata
+
+En el proyecto nevados-cerveza, abre `app/layout.tsx` y cambia:
+
+```tsx
+// ANTES (lo que hay ahora — aparece "Create Next App" en la pestaña)
+export const metadata: Metadata = {
+  title: "Create Next App",
+  ...
+}
+
+// DESPUÉS
+export const metadata: Metadata = {
+  title: "Nevados — Cerveza Artesanal · Manizales",
+  description: "Panel de gestión para Nevados Cerveza Artesanal. Manizales, Caldas.",
+}
+```

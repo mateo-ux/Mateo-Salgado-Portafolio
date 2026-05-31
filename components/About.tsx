@@ -37,6 +37,31 @@ export default function About() {
                     width: auto; height: auto;
                     max-width: 320px; max-height: 420px;
                     border-radius: 8px;
+                    border: 1px solid var(--border);
+                }
+                .about-stats {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 1rem;
+                    margin-top: 2rem;
+                    padding-top: 2rem;
+                    border-top: 1px solid var(--border);
+                }
+                .about-stat-value {
+                    font-family: var(--font-syne);
+                    font-size: 1.6rem;
+                    font-weight: 800;
+                    color: var(--accent);
+                    letter-spacing: -0.03em;
+                    line-height: 1;
+                }
+                .about-stat-label {
+                    font-family: var(--font-syne);
+                    font-size: 0.65rem;
+                    color: var(--muted);
+                    text-transform: uppercase;
+                    letter-spacing: 0.1em;
+                    margin-top: 0.3rem;
                 }
                 @media (max-width: 768px) {
                     .about-section { padding: 5rem 1.5rem; }
@@ -44,7 +69,6 @@ export default function About() {
                         grid-template-columns: 1fr;
                         gap: 2.5rem;
                     }
-                    /* Photo stays AFTER the text (default flow, no order change) */
                     .about-photo-wrap {
                         padding: 0;
                         justify-content: center;
@@ -53,12 +77,15 @@ export default function About() {
                         max-width: 260px;
                         max-height: 340px;
                     }
+                    .about-stats {
+                        grid-template-columns: repeat(3, 1fr);
+                    }
                 }
             `}</style>
 
             <section id="sobre-mi" ref={sectionRef} className="about-section">
                 <div className="about-grid">
-                    {/* TEXT — always first in DOM, so it renders above on mobile */}
+                    {/* TEXT */}
                     <div className="reveal">
                         <p style={{ fontFamily: "var(--font-syne)", fontSize: "0.72rem", color: "var(--accent)", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: "1rem" }}>
                             // 01 — Sobre mí
@@ -67,29 +94,42 @@ export default function About() {
                             Constructor de proyectos e ideas.
                         </h2>
                         <p style={{ color: "var(--muted)", marginBottom: "1.2rem" }}>
-                            Soy Mateo Salgado, <strong style={{ color: "var(--text)", fontWeight: 500 }}>Ingeniero Mecatrónico</strong> de 29 años con base en Manizales. Trabajo como contratista en la <strong style={{ color: "var(--text)", fontWeight: 500 }}>Universidad de Caldas</strong> y en proyectos de desarrollo para la empresa <strong style={{ color: "var(--text)", fontWeight: 500 }}>IAConexiones.</strong>
+                            Soy Mateo Salgado, <strong style={{ color: "var(--text)", fontWeight: 500 }}>Ingeniero Mecatrónico</strong> con base en Manizales. Trabajo como contratista en la <strong style={{ color: "var(--text)", fontWeight: 500 }}>Universidad de Caldas</strong> y desarrollo sistemas web para clientes reales a través de <strong style={{ color: "var(--text)", fontWeight: 500 }}>IAConexiones.</strong>
                         </p>
                         <p style={{ color: "var(--muted)", marginBottom: "1.2rem" }}>
-                            Me especializo en construir soluciones que van desde <strong style={{ color: "var(--text)", fontWeight: 500 }}>aplicaciones web con Next.js</strong> hasta automatizaciones con Google Apps Script, pasando por apps móviles con Flutter y APIs en Python/Django, C# y .NET.
+                            Me especializo en construir soluciones completas: desde <strong style={{ color: "var(--text)", fontWeight: 500 }}>aplicaciones web con Next.js</strong> hasta ERPs móviles con Flutter, APIs en Python/Django y automatizaciones con Google Apps Script.
                         </p>
                         <p style={{ color: "var(--muted)", marginBottom: "1.2rem" }}>
-                            Actualmente curso una <strong style={{ color: "var(--text)", fontWeight: 500 }}>especialización en Inteligencia Artificial</strong> en la Universidad de La Rioja.
+                            Recién finalicé una <strong style={{ color: "var(--text)", fontWeight: 500 }}>Especialización en Inteligencia Artificial</strong> en la Universidad Internacional de La Rioja.
                         </p>
+
                         <div style={{
                             display: "inline-flex", alignItems: "center", gap: "0.5rem",
                             background: "rgba(0,229,192,0.08)", border: "1px solid rgba(0,229,192,0.2)",
-                            borderRadius: 4, padding: "0.5rem 1rem", marginTop: "1.5rem",
+                            borderRadius: 4, padding: "0.5rem 1rem", marginTop: "0.5rem",
                             fontFamily: "var(--font-syne)", fontSize: "0.72rem", color: "var(--accent)"
                         }}>
                             🏅 Certificado ISO 17024 — Desarrollo de Software · ParqueSoft TI, Oct 2024
                         </div>
+
+                        {/* Stats */}
+                        <div className="about-stats">
+                            <div>
+                                <div className="about-stat-value">6+</div>
+                                <div className="about-stat-label">Proyectos en producción</div>
+                            </div>
+                            <div>
+                                <div className="about-stat-value">3+</div>
+                                <div className="about-stat-label">Años en tecnología</div>
+                            </div>
+                        </div>
                     </div>
 
-                    {/* PHOTO — second in DOM, renders below text on mobile naturally */}
+                    {/* PHOTO */}
                     <div className="reveal about-photo-wrap">
                         <img
                             src="/foto.jpg"
-                            alt="Mateo Salgado"
+                            alt="Mateo Salgado — Full Stack Developer"
                             className="about-photo"
                         />
                     </div>

@@ -12,7 +12,7 @@ const education = [
         icon: "🤖",
         degree: "Especialización en Inteligencia Artificial",
         institution: "Universidad Internacional de la Rioja",
-        year: "En curso · 2025–2026",
+        year: "Completada · Mayo 2026",
     },
     {
         icon: "🏅",

@@ -3,16 +3,16 @@ import { useEffect, useRef } from "react";
 
 const experience = [
     {
-        date: "Nov 2024 — Presente",
-        title: "Soporte plataformas y desarrollador Full Stack",
+        date: "Nov 2024 — Jun 2026",
+        title: "Soporte de Plataformas y Desarrollador Full Stack",
         company: "Universidad de Caldas · Manizales, Colombia",
-        desc: "Desarrollo de herramientas internas con Python y Next.js (API), administración de Moodle y SIGA, automatizaciones con Google Apps Script y generación de reportes dinámicos en Google Sheets conectados con plataformas académicas. (Talento Tech)",
+        desc: "Desarrollo de herramientas internas con Python y Next.js, administración de plataformas Moodle y SIGA, automatizaciones con Google Apps Script y generación de reportes dinámicos en Google Sheets conectados con sistemas académicos. Programa Talento Tech.",
     },
     {
         date: "Nov 2025 — Abr 2026",
         title: "Desarrollador Full Stack",
         company: "IA Conexiones · Colombia",
-        desc: "Desarrollo de páginas web con backend, apps móvil ERP con Flutter y Firebase, e integración de bases de datos SQL con frontends en Next.js para clientes de distintos sectores.",
+        desc: "Desarrollo de sistemas web completos con backend conectado, apps móvil ERP en Flutter con Firebase, e integración de bases de datos SQL con frontends en Next.js para clientes de distintos sectores. Entre los proyectos entregados: sistema ERP agrícola con más de 2.200 registros migrados y plataforma educativa con IA.",
     },
 ];
 

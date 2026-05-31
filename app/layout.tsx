@@ -16,7 +16,17 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   title: "Mateo Salgado — Full Stack Developer",
-  description: "Portafolio de Mateo Alejandro Salgado Salgado. Desarrollador Full Stack especializado en Next.js, Python y Flutter.",
+  description:
+    "Portafolio de Mateo Alejandro Salgado Salgado. Desarrollador Full Stack especializado en Next.js, Python/Django y Flutter. Disponible para proyectos remotos.",
+  openGraph: {
+    title: "Mateo Salgado — Full Stack Developer",
+    description:
+      "Desarrollador Full Stack en Manizales, Colombia. Next.js, Python/Django, Flutter, Firebase.",
+    url: "https://mateo-salgado-portafolio.vercel.app",
+    siteName: "Mateo Salgado Portfolio",
+    locale: "es_CO",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

@@ -7,7 +7,6 @@ import Navbar from "@/components/Navbar";
 import Projects from "@/components/Proyects";
 import Stack from "@/components/Stacks";
 
-
 export default function Home() {
   return (
     <main>
