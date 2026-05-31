@@ -20,6 +20,7 @@ const education = [
         institution: "ParqueSoft TI · EvalMAX",
         year: "Certificado · Octubre 2024",
     },
+
 ];
 
 export default function Education() {

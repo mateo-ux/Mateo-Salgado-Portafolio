@@ -14,6 +14,18 @@ const experience = [
         company: "IA Conexiones · Colombia",
         desc: "Desarrollo de sistemas web completos con backend conectado, apps móvil ERP en Flutter con Firebase, e integración de bases de datos SQL con frontends en Next.js para clientes de distintos sectores. Entre los proyectos entregados: sistema ERP agrícola con más de 2.200 registros migrados y plataforma educativa con IA.",
     },
+    {
+        date: "Jun 2023 — Nov 2023",
+        title: "Analista de Eficiencia Operacional",
+        company: "Veolia Servicios Industriales · Colombia",
+        desc: "Implementación de soluciones IoT para adquisición y análisis de datos industriales. Análisis de datos operativos para identificar oportunidades de mejora y automatización. Reportes de monitoreo mediante SQL integrado con Excel y Report Builder.",
+    },
+    {
+        date: "Sep 2021 — Mar 2022",
+        title: "Practicante de Automatización y Proyectos",
+        company: "Arme S.A.",
+        desc: "Reportes de monitoreo industrial mediante consultas SQL e integración con Excel y Report Builder.",
+    },
 ];
 
 export default function Experience() {

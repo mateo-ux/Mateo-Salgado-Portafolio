@@ -94,7 +94,7 @@ export default function About() {
                             Constructor de proyectos e ideas.
                         </h2>
                         <p style={{ color: "var(--muted)", marginBottom: "1.2rem" }}>
-                            Soy Mateo Salgado, <strong style={{ color: "var(--text)", fontWeight: 500 }}>Ingeniero Mecatrónico</strong> con base en Manizales. Trabajo como contratista en la <strong style={{ color: "var(--text)", fontWeight: 500 }}>Universidad de Caldas</strong> y desarrollo sistemas web para clientes reales a través de <strong style={{ color: "var(--text)", fontWeight: 500 }}>IAConexiones.</strong>
+                            Soy Mateo Salgado, <strong style={{ color: "var(--text)", fontWeight: 500 }}>Ingeniero Mecatrónico</strong> con base en Manizales.
                         </p>
                         <p style={{ color: "var(--muted)", marginBottom: "1.2rem" }}>
                             Me especializo en construir soluciones completas: desde <strong style={{ color: "var(--text)", fontWeight: 500 }}>aplicaciones web con Next.js</strong> hasta ERPs móviles con Flutter, APIs en Python/Django y automatizaciones con Google Apps Script.
@@ -119,8 +119,8 @@ export default function About() {
                                 <div className="about-stat-label">Proyectos en producción</div>
                             </div>
                             <div>
-                                <div className="about-stat-value">3+</div>
-                                <div className="about-stat-label">Años en tecnología</div>
+                                <div className="about-stat-value">2+</div>
+                                <div className="about-stat-label">Años en desarrollo</div>
                             </div>
                         </div>
                     </div>

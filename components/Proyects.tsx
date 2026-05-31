@@ -42,7 +42,7 @@ const projects = [
     {
         type: "Tienda Online",
         title: "LapTechMac",
-        desc: "E-commerce de equipos Apple y tecnología con catálogos dinámicos conectados a base de datos, gestión de productos y flujo de compra completo. Desplegado en producción.",
+        desc: "E-commerce de equipos Apple y tecnología con catálogos dinámicos conectados a base de datos, gestión de productos y flujo de compra completo.",
         tags: ["Next.js", "Base de Datos", "E-commerce"],
         link: "https://www.laptechmac.com/",
         preview: "https://www.laptechmac.com/",
