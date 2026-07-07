@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV — Mateo Alejandro Salgado</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --navy: #0f2a4a;
+            --blue: #1a5fa8;
+            --accent: #2d9cdb;
+            --light: #f0f6ff;
+            --muted: #6b7a8d;
+            --border: #d0dce8;
+            --white: #ffffff;
+            --text: #1c2b3a;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #e8eef5;
+            display: flex;
+            justify-content: center;
+            padding: 32px 16px;
+            min-height: 100vh;
+        }
+
+        .page {
+            width: 210mm;
+            background: var(--white);
+            display: grid;
+            grid-template-columns: 68mm 1fr;
+            box-shadow: 0 20px 60px rgba(15, 42, 74, 0.18);
+            border-radius: 2px;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            background: var(--navy);
+            color: var(--white);
+            padding: 40px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .avatar-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .avatar {
+            width: 88px;
+            height: 88px;
+            border-radius: 50%;
+            background: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: 700;
+            color: white;
+            letter-spacing: -1px;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .sidebar-name {
+            font-size: 16px;
+            font-weight: 700;
+            text-align: center;
+            line-height: 1.3;
+            letter-spacing: -0.3px;
+        }
+
+        .sidebar-role {
+            font-size: 10.5px;
+            color: var(--accent);
+            text-align: center;
+            font-family: 'DM Mono', monospace;
+            letter-spacing: 0.5px;
+            margin-top: 2px;
+        }
+
+        .s-section {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .s-label {
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent);
+            border-bottom: 1px solid rgba(45, 156, 219, 0.3);
+            padding-bottom: 6px;
+            margin-bottom: 2px;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+        }
+
+        .contact-item span {
+            font-size: 10px;
+            color: rgba(255, 255, 255, 0.6);
+            font-family: 'DM Mono', monospace;
+        }
+
+        .contact-item a,
+        .contact-item p {
+            font-size: 10.5px;
+            color: rgba(255, 255, 255, 0.92);
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        .contact-item a:hover {
+            color: var(--accent);
+        }
+
+        .skill-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .skill-item {}
+
+        .skill-name {
+            font-size: 10.5px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 4px;
+        }
+
+        .skill-bar {
+            height: 3px;
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .skill-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent), #74c8f5);
+            border-radius: 2px;
+        }
+
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .tag {
+            font-size: 9.5px;
+            background: rgba(45, 156, 219, 0.15);
+            color: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(45, 156, 219, 0.3);
+            border-radius: 3px;
+            padding: 3px 7px;
+            font-family: 'DM Mono', monospace;
+        }
+
+        .lang-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .lang-name {
+            font-size: 10.5px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .lang-level {
+            font-size: 9px;
+            color: var(--accent);
+            font-family: 'DM Mono', monospace;
+            background: rgba(45, 156, 219, 0.12);
+            padding: 2px 6px;
+            border-radius: 2px;
+        }
+
+        /* MAIN CONTENT */
+        .main {
+            padding: 36px 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .main-header {}
+
+        .main-name {
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--navy);
+            letter-spacing: -1px;
+            line-height: 1.1;
+        }
+
+        .main-name span {
+            color: var(--accent);
+        }
+
+        .main-title {
+            font-size: 11px;
+            color: var(--blue);
+            font-family: 'DM Mono', monospace;
+            margin-top: 4px;
+            letter-spacing: 0.3px;
+        }
+
+        .main-summary {
+            font-size: 10.5px;
+            color: var(--muted);
+            line-height: 1.65;
+            margin-top: 10px;
+            border-left: 3px solid var(--accent);
+            padding-left: 12px;
+        }
+
+        .m-section {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .m-label {
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--navy);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .m-label::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        .job {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .job-title {
+            font-size: 11.5px;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .job-dates {
+            font-size: 9px;
+            color: var(--white);
+            background: var(--blue);
+            padding: 2px 7px;
+            border-radius: 2px;
+            white-space: nowrap;
+            font-family: 'DM Mono', monospace;
+            flex-shrink: 0;
+        }
+
+        .job-company {
+            font-size: 10px;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .job-bullets {
+            margin-top: 4px;
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .job-bullets li {
+            font-size: 10px;
+            color: var(--text);
+            line-height: 1.55;
+            list-style: none;
+            padding-left: 12px;
+            position: relative;
+        }
+
+        .job-bullets li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-size: 9px;
+        }
+
+        .edu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .edu-degree {
+            font-size: 10.5px;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .edu-inst {
+            font-size: 10px;
+            color: var(--muted);
+            margin-top: 1px;
+        }
+
+        .edu-date {
+            font-size: 9px;
+            color: var(--muted);
+            font-family: 'DM Mono', monospace;
+            white-space: nowrap;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .cert-item {
+            display: flex;
+            gap: 8px;
+            align-items: flex-start;
+        }
+
+        .cert-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+            flex-shrink: 0;
+            margin-top: 4px;
+        }
+
+        .cert-text {
+            font-size: 10px;
+            color: var(--text);
+            line-height: 1.5;
+        }
+
+        .cert-text strong {
+            color: var(--navy);
+        }
+
+        .divider {
+            height: 1px;
+            background: var(--border);
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .page {
+                box-shadow: none;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="avatar-wrap">
+                <div class="avatar">MS</div>
+                <div>
+                    <div class="sidebar-name">Mateo Alejandro<br>Salgado Salgado</div>
+                    <div class="sidebar-role">Full Stack Developer</div>
+                </div>
+            </div>
+
+            <div class="s-section">
+                <div class="s-label">Contacto</div>
+                <div class="contact-item">
+                    <span>Email</span>
+                    <a href="mailto:mateosalgado555@gmail.com">mateosalgado555@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <span>Teléfono</span>
+                    <p>+57 320 938 9636</p>
+                </div>
+                <div class="contact-item">
+                    <span>Ubicación</span>
+                    <p>Manizales, Colombia</p>
+                </div>
+                <div class="contact-item">
+                    <span>Portafolio</span>
+                    <a href="https://mateo-salgado-portafolio.vercel.app">mateo-salgado-portafolio.vercel.app</a>
+                </div>
+                <div class="contact-item">
+                    <span>GitHub</span>
+                    <a href="https://github.com/mateo-ux">github.com/mateo-ux</a>
+                </div>
+                <div class="contact-item">
+                    <span>LinkedIn</span>
+                    <a
+                        href="https://linkedin.com/in/mateo-alejandro-salgado-salgado">linkedin.com/in/mateo-alejandro-salgado-salgado</a>
+                </div>
+            </div>
+
+            <div class="s-section">
+                <div class="s-label">Stack Principal</div>
+                <div class="skill-list">
+                    <div class="skill-item">
+                        <div class="skill-name">Next.js / React</div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width:95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">JavaScript / TypeScript</div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width:90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">Python / Django</div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width:82%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">Flutter / Firebase</div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width:80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">SQL</div>
+                        <div class="skill-bar">
+                            <div class="skill-fill" style="width:78%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="s-section">
+                <div class="s-label">Herramientas</div>
+                <div class="tag-cloud">
+                    <span class="tag">Git</span>
+                    <span class="tag">REST APIs</span>
+                    <span class="tag">Google Cloud</span>
+                    <span class="tag">Apps Script</span>
+                    <span class="tag">Node.js</span>
+                    <span class="tag">Moodle</span>
+                    <span class="tag">Firebase</span>
+                    <span class="tag">Vercel</span>
+                </div>
+            </div>
+
+            <div class="s-section">
+                <div class="s-label">Idiomas</div>
+                <div class="lang-item">
+                    <span class="lang-name">Español</span>
+                    <span class="lang-level">Nativo</span>
+                </div>
+                <div class="lang-item">
+                    <span class="lang-name">Inglés</span>
+                    <span class="lang-level">B1</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MAIN -->
+        <main class="main">
+            <div class="main-header">
+                <div class="main-name">Mateo <span>Salgado.</span></div>
+                <div class="main-title">Ingeniero Mecatrónico · Full Stack Developer · IA en formación</div>
+                <p class="main-summary">
+                    Más de 2 años construyendo aplicaciones web, móviles y automatizaciones para clientes reales.
+                    Especializado en Next.js, Python/Django y Flutter. Certificado ISO 17024 en Desarrollo de Software.
+                    Actualmente cursando especialización en Inteligencia Artificial.
+                </p>
+            </div>
+
+            <div class="m-section">
+                <div class="m-label">Experiencia</div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Arquitecto de Soluciones / Full Stack Developer</div>
+                            <div class="job-company">IAConexiones S.A.S — Manizales, Colombia</div>
+                        </div>
+                        <div class="job-dates">Nov 2025 – Presente</div>
+                    </div>
+                    <ul class="job-bullets">
+                        <li>Desarrollo de sitio web corporativo con Next.js: diseño, arquitectura y despliegue en
+                            producción. (iaconexiones.com)</li>
+                        <li>Construcción de LapTechMac, e-commerce con catálogo dinámico en SQL para equipos Apple.
+                            (laptechmac.com)</li>
+                        <li>Plataforma educativa Lección Mágica con backend en Django e integración de IA.
+                            (leccion-magica.iaconexiones.com)</li>
+                        <li>ERP móvil en Flutter con sincronización Firebase en tiempo real y reportes automáticos en
+                            Google Sheets.</li>
+                        <li>Ciclo completo: requerimientos, arquitectura, desarrollo, pruebas y despliegue para
+                            múltiples clientes.</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Soporte Nivel 2 / Desarrollador Full Stack</div>
+                            <div class="job-company">Universidad de Caldas — Manizales, Colombia</div>
+                        </div>
+                        <div class="job-dates">Nov 2024 – Feb 2026</div>
+                    </div>
+                    <ul class="job-bullets">
+                        <li>Desarrollo de herramientas internas con Python y Next.js para automatización de procesos
+                            académicos.</li>
+                        <li>Automatización con Google Apps Script y Google Cloud; generación de reportes dinámicos en
+                            Google Sheets.</li>
+                        <li>Optimización de consultas SQL sobre Moodle; integración de APIs externas entre sistemas.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Analista de Eficiencia Operacional</div>
+                            <div class="job-company">Veolia Servicios Industriales — Colombia</div>
+                        </div>
+                        <div class="job-dates">Jun 2023 – Nov 2023</div>
+                    </div>
+                    <ul class="job-bullets">
+                        <li>Implementación de soluciones IoT para adquisición y análisis de datos industriales.</li>
+                        <li>Análisis de datos operativos para identificar oportunidades de mejora y automatización.</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Practicante de Automatización y Proyectos</div>
+                            <div class="job-company">Arme S.A.</div>
+                        </div>
+                        <div class="job-dates">Sep 2021 – Mar 2022</div>
+                    </div>
+                    <ul class="job-bullets">
+                        <li>Reportes de monitoreo industrial mediante consultas SQL e integración con Excel y Report
+                            Builder.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="m-section">
+                <div class="m-label">Educación</div>
+                <div class="edu-item">
+                    <div>
+                        <div class="edu-degree">Especialización en Inteligencia Artificial</div>
+                        <div class="edu-inst">Universidad Internacional de La Rioja</div>
+                    </div>
+                    <div class="edu-date">Oct 2024 – En curso</div>
+                </div>
+                <div class="edu-item">
+                    <div>
+                        <div class="edu-degree">Ingeniería Mecatrónica</div>
+                        <div class="edu-inst">Universidad de Caldas — Manizales</div>
+                    </div>
+                    <div class="edu-date">2016 – 2022</div>
+                </div>
+                <div class="edu-item">
+                    <div>
+                        <div class="edu-degree">Diplomado en Desarrollo de Software Full Stack</div>
+                        <div class="edu-inst">ParqueSoft TI — Cali</div>
+                    </div>
+                    <div class="edu-date">Ene – Sep 2024</div>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="m-section">
+                <div class="m-label">Certificaciones</div>
+                <div class="cert-item">
+                    <div class="cert-dot"></div>
+                    <div class="cert-text"><strong>Certificado en Desarrollo de Software – Norma ISO
+                            17024</strong><br>ParqueSoft TI · EvalMAX · Octubre 2024</div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-dot"></div>
+                    <div class="cert-text"><strong>SQL y Report Builder Avanzado</strong><br>Udemy · Octubre 2023</div>
+                </div>
+            </div>
+        </main>
+
+    </div>
+</body>
+
+</html>
